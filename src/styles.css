@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f4f4f4;
+}
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+}
+
+.titulo-principal {
+  font-size: 40px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.subtitulo {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: gray;
+}
+
+.caja {
+  background-color: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 300px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: #2c3e50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #34495e;
+}
+
+.header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seccion {
+  padding: 40px;
+}
+
+.seccion h2 {
+  margin-bottom: 20px;
+}
+
+.grid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #e6eef5;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.card:hover {
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.16);
+}
+
+.card-boton {
+  text-align: left;
+  margin-top: 0;
+  color: #1f2d3a;
+  background-color: #e6eef5;
+}
+
+.card-boton:hover {
+  background-color: #e6eef5;
+}
+
+.card-boton:focus {
+  outline: none;
+  border-color: #2c3e50;
+}
+
+.card-boton h3,
+.card-boton p,
+.card-boton small {
+  margin: 0 0 8px 0;
+}
+
+.card-boton small {
+  display: inline-block;
+}
+
+.detalle {
+  background-color: white;
+  padding: 24px;
+  border-radius: 15px;
+  box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
+  max-width: 720px;
+}
+
+.detalle p {
+  margin: 8px 0;
+}
+
+.detalle-pagina {
+  margin-top: 16px;
+}
