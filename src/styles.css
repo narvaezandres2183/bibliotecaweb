@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
   background-color: #f4f4f4;
+  color: #1f2d3a;
 }
 
 .contenedor {
@@ -30,17 +31,26 @@ body {
   padding: 30px;
   border-radius: 15px;
   width: 300px;
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-input {
+input,
+select,
+textarea {
   width: 90%;
   padding: 10px;
   margin: 10px 0;
-  border-radius: 20px;
-  border: 1px solid #ccc;
+  border-radius: 12px;
+  border: 1px solid #cfd8e3;
   outline: none;
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
 }
 
 button {
@@ -51,6 +61,7 @@ button {
   background-color: #2c3e50;
   color: white;
   cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
 }
 
 button:hover {
@@ -66,12 +77,52 @@ button:hover {
   align-items: center;
 }
 
+.nav-principal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 16px 40px 0 40px;
+}
+
+.nav-item {
+  margin-top: 0;
+  background-color: #dce6f2;
+  color: #1f2d3a;
+  border-radius: 10px;
+}
+
+.nav-item:hover {
+  background-color: #ccd9e9;
+}
+
+.nav-item.activo {
+  background-color: #2c3e50;
+  color: #ffffff;
+}
+
 .seccion {
-  padding: 40px;
+  padding: 24px 40px 40px 40px;
 }
 
 .seccion h2 {
   margin-bottom: 20px;
+}
+
+.subtitulo-seccion {
+  margin: 28px 0 16px 0;
+}
+
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filtros input,
+.filtros select {
+  width: 260px;
+  margin: 0;
 }
 
 .grid {
@@ -85,48 +136,161 @@ button:hover {
   padding: 20px;
   border-radius: 15px;
   width: 250px;
-  box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
-  cursor: pointer;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
   border: 2px solid transparent;
-  transition: border-color 0.15s ease;
+  position: relative;
 }
 
 .card:hover {
-  box-shadow: 0px 8px 20px rgba(0,0,0,0.16);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.16);
 }
 
 .card-boton {
   text-align: left;
   margin-top: 0;
   color: #1f2d3a;
-  background-color: #e6eef5;
+  background-color: transparent;
+  width: 100%;
+  padding: 0;
+  border-radius: 0;
 }
 
 .card-boton:hover {
-  background-color: #e6eef5;
+  background-color: transparent;
 }
 
-.card-boton:focus {
-  outline: none;
+.card-link {
+  cursor: pointer;
+}
+
+.catalogo-card {
+  min-height: 180px;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tags {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tag-libro {
+  background-color: #d7ecff;
+  color: #0c4a7a;
+}
+
+.tag-expo {
+  background-color: #eadcff;
+  color: #5a2a86;
+}
+
+.tag-categoria {
+  background-color: #dde6d6;
+  color: #2b5a29;
+}
+
+.tag-alerta {
+  background-color: #ffe6bf;
+  color: #855700;
+  margin-top: 8px;
+}
+
+.favorito-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  margin: 0;
+  background-color: #f0f2f5;
+  color: #7f8c8d;
+  font-size: 17px;
+}
+
+.favorito-btn:hover {
+  background-color: #f0f2f5;
+}
+
+.favorito-btn.activo {
+  color: #d62839;
+}
+
+.categoria-card {
+  text-align: left;
+  margin-top: 0;
+  background-color: #e6eef5;
+  color: #1f2d3a;
+}
+
+.categoria-card:hover {
+  background-color: #e6eef5;
+  color: #1f2d3a;
+}
+
+.categoria-activa {
   border-color: #2c3e50;
 }
 
-.card-boton h3,
-.card-boton p,
-.card-boton small {
-  margin: 0 0 8px 0;
+.evento-card {
+  width: 310px;
 }
 
-.card-boton small {
-  display: inline-block;
+.evento-card p {
+  margin: 8px 0;
+}
+
+.evento-accion {
+  width: 100%;
+}
+
+.evento-accion.ya-inscrito {
+  background-color: #1f8f4f;
+}
+
+.evento-accion.ya-inscrito:hover {
+  background-color: #1f8f4f;
+}
+
+.evento-accion.cancelar {
+  background-color: #b33939;
+}
+
+.evento-accion.cancelar:hover {
+  background-color: #972e2e;
+}
+
+.eliminar-btn {
+  margin-top: 12px;
+  background-color: #e9edf2;
+  color: #b33939;
+}
+
+.eliminar-btn:hover {
+  background-color: #dde4ec;
 }
 
 .detalle {
   background-color: white;
   padding: 24px;
   border-radius: 15px;
-  box-shadow: 0px 0px 8px rgba(0,0,0,0.1);
-  max-width: 720px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+  max-width: 780px;
 }
 
 .detalle p {
@@ -135,4 +299,80 @@ button:hover {
 
 .detalle-pagina {
   margin-top: 16px;
+}
+
+.estadisticas-grid .card {
+  width: 230px;
+}
+
+.estadistica-card p {
+  font-size: 28px;
+  margin: 10px 0 0 0;
+  font-weight: 600;
+}
+
+.perfil-header {
+  margin-bottom: 12px;
+}
+
+.nivel {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background-color: #ffe48f;
+  color: #7c5a00;
+  font-weight: 600;
+}
+
+.perfil-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.perfil-form input,
+.perfil-form textarea {
+  width: 100%;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-weight: 400;
+}
+
+.checkbox input {
+  width: auto;
+  margin: 0;
+}
+
+.acciones-detalle {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.favorito-detalle.activo {
+  background-color: #d62839;
+}
+
+@media (max-width: 768px) {
+  .header,
+  .nav-principal,
+  .seccion {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .card,
+  .evento-card {
+    width: 100%;
+  }
+
+  .filtros input,
+  .filtros select {
+    width: 100%;
+  }
 }

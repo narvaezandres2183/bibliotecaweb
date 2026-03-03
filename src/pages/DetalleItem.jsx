@@ -1,4 +1,4 @@
-function DetalleItem({ item, volver, cerrarSesion }) {
+function DetalleItem({ item, volver, cerrarSesion, toggleFavorito, esFavorito }) {
   if (!item) {
     return (
       <div>
@@ -24,11 +24,23 @@ function DetalleItem({ item, volver, cerrarSesion }) {
       </div>
 
       <div className="seccion">
-        <button onClick={volver}>Volver a biblioteca</button>
+        <div className="acciones-detalle">
+          <button onClick={volver}>Volver a biblioteca</button>
+          <button
+            className={`favorito-detalle ${esFavorito ? "activo" : ""}`}
+            onClick={() => toggleFavorito(item)}
+          >
+            {esFavorito ? "♥ En favoritos" : "♡ Agregar a favoritos"}
+          </button>
+        </div>
+
         <div className="detalle detalle-pagina">
           <h2>{item.titulo}</h2>
           <p>
             <strong>Tipo:</strong> {item.tipo}
+          </p>
+          <p>
+            <strong>Categoría:</strong> {item.categoria}
           </p>
           <p>
             <strong>Autor:</strong> {item.autor}
